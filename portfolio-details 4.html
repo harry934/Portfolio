@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>ML Mini Projects | Harry Otieno</title>
+  <meta name="description" content="A collection of Machine Learning projects and experiments">
+  <meta name="keywords" content="Machine Learning, Python, Data Science, Google Colab, AI Projects">
+
+
+
+  <!-- Force remove favicon -->
+  <link rel="icon" href="data:,">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/projects.css" rel="stylesheet">
+
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Harry Otieno</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Me</a></li>
+          <li><a href="index.html#interests">My Interests</a></li>
+          <li><a href="index.html#portfolio">My Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="portfolio-details-slider swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              },
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+
+            <div class="swiper-slide">
+              <img src="assets/img/projects/ml_mini_projects_1766587994530.png" alt="ML Projects Overview">
+            </div>
+
+            <div class="swiper-slide">
+              <img src="assets/img/portfolio/app-3.jpg" alt="Data Analysis">
+            </div>
+
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="row justify-content-between gy-4 mt-4">
+
+          <div class="col-lg-8" data-aos="fade-up">
+            <div class="portfolio-description">
+              <h2>Machine Learning Mini Projects & Experiments</h2>
+              <p>
+                This portfolio entry represents a curated collection of various machine learning mini-projects and data science experiments I have conducted. These projects serve as a practical exploration of different algorithms, data preprocessing techniques, and model evaluation metrics. They are primarily built and documented using Google Colab notebooks.
+              </p>
+              <p>
+                The goal of this collection is to demonstrate versatility in handling different types of data (structured, text, image) and effectively applying the appropriate ML techniques to solve specific problems.
+              </p>
+
+              <h3>Project Collection Highlights</h3>
+              <ul>
+                <li><strong>Predictive Analytics:</strong> Regression models for housing price prediction and sales forecasting.</li>
+                <li><strong>Classification Tasks:</strong> Customer churn prediction and iris flower classification using Support Vector Machines (SVM) and Random Forests.</li>
+                <li><strong>Clustering:</strong> K-Means clustering for customer segmentation analysis.</li>
+                <li><strong>Natural Language Processing (NLP):</strong> Sentiment analysis on review datasets using basic nltk and scikit-learn pipelines.</li>
+              </ul>
+
+              <h3>Tools & Libraries</h3>
+              <p>
+                The projects extensively use the Python data science ecosystem:
+              </p>
+              <ul>
+                <li><strong>Pandas & NumPy:</strong> For data manipulation and numerical analysis.</li>
+                <li><strong>Matplotlib & Seaborn:</strong> For data visualization and exploratory data analysis (EDA).</li>
+                <li><strong>Scikit-Learn:</strong> For model building, training, and evaluation.</li>
+                <li><strong>Google Colab:</strong> Cloud-based notebook environment for development.</li>
+              </ul>
+
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Each mini-project was an opportunity to deep dive into a specific algorithm. From understanding the math behind Gradient Descent to fine-tuning hyperparameters in a Neural Network, this collection documents my continuous journey in mastering AI.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-info">
+              <h3>Project Information</h3>
+              <ul>
+                <li><strong>Category:</strong> Machine Learning / Data Science</li>
+                <li><strong>Type:</strong> Personal Projects Series</li>
+                <li><strong>Platform:</strong> Google Colab / Jupyter</li>
+                <li><strong>Technologies:</strong> Python, Scikit-learn, Pandas, Matplotlib</li>
+                <li><strong>Status:</strong> Ongoing</li>
+                <li class="mt-3">
+                  <a href="index.html#portfolio" class="btn-visit align-self-start">
+                    <i class="bi bi-arrow-left"></i> Back to Projects
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+    <div class="container">
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="www.linkedin.com/in/h-o-mokaya-0949a2362"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+        <a>Designed by Harry Otieno</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
