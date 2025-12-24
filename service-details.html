@@ -4,13 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Service Details - DevFolio Bootstrap Template</title>
+  <title>Interest Details - Harry Otieno</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Force remove favicon -->
+  <link rel="icon" href="data:,">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -26,14 +25,19 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: DevFolio
-  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
+  <style>
+    .service-details .detail-icon {
+      font-size: 64px;
+      color: var(--accent-color);
+      margin-bottom: 20px;
+      display: inline-block;
+      background: var(--surface-color);
+      padding: 20px;
+      border-radius: 50%;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 
 <body class="service-details-page">
@@ -42,35 +46,16 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">DevFolio</h1>
+        <!-- Logo can differ or match index.html -->
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero">Home<br></a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html#hero">Home<br></a></li>
+          <li><a href="index.html#about">About Me</a></li>
+          <li><a href="service-details.html" class="active">My Interests</a></li>
+          <li><a href="index.html#portfolio">My Projects</a></li>
+          <li><a href="index.html#contact">My Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -83,11 +68,11 @@
     <!-- Page Title -->
     <div class="page-title" data-aos="fade">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Service Details</h1>
+        <h1 class="mb-2 mb-lg-0">Interest Details</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li class="current">Service Details</li>
+            <li class="current">Interest Details</li>
           </ol>
         </nav>
       </div>
@@ -101,35 +86,30 @@
         <div class="row gy-4">
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="services-list">
-              <a href="#" class="active">Web Design</a>
-              <a href="#">Software Development</a>
-              <a href="#">Product Management</a>
-              <a href="#">Graphic Design</a>
-              <a href="#">Marketing</a>
+            <div class="services-list" id="interests-sidebar">
+              <a href="?id=software-engineering" class="sidebar-link" data-id="software-engineering">Software Engineering</a>
+              <a href="?id=machine-learning" class="sidebar-link" data-id="machine-learning">Machine Learning</a>
+              <a href="?id=android-development" class="sidebar-link" data-id="android-development">Android Development</a>
+              <a href="?id=web-development" class="sidebar-link" data-id="web-development">Web Development</a>
+              <a href="?id=iot-solutions" class="sidebar-link" data-id="iot-solutions">IoT Projects & Automation</a>
+              <a href="?id=fitness-wellness" class="sidebar-link" data-id="fitness-wellness">Fitness & Wellness</a>
             </div>
 
-            <h4>Enim qui eos rerum in delectus</h4>
-            <p>Nam voluptatem quasi numquam quas fugiat ex temporibus quo est. Quia aut quam quod facere ut non occaecati ut aut. Nesciunt mollitia illum tempore corrupti sed eum reiciendis. Maxime modi rerum.</p>
+            <h4 id="sidebar-quote-title">Passionate about Impact</h4>
+            <p id="sidebar-quote-text">Everything I do is driven by a desire to solve problems and improve lives through technology and discipline.</p>
           </div>
 
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/services.jpg" alt="" class="img-fluid services-img">
-            <h3>Temporibus et in vero dicta aut eius lidero plastis trand lined voluptas dolorem ut voluptas</h3>
-            <p>
-              Blanditiis voluptate odit ex error ea sed officiis deserunt. Cupiditate non consequatur et doloremque consequuntur. Accusantium labore reprehenderit error temporibus saepe perferendis fuga doloribus vero. Qui omnis quo sit. Dolorem architecto eum et quos deleniti officia qui.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Aut eum totam accusantium voluptatem.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Assumenda et porro nisi nihil nesciunt voluptatibus.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span></li>
-            </ul>
-            <p>
-              Est reprehenderit voluptatem necessitatibus asperiores neque sed ea illo. Deleniti quam sequi optio iste veniam repellat odit. Aut pariatur itaque nesciunt fuga.
-            </p>
-            <p>
-              Sunt rem odit accusantium omnis perspiciatis officia. Laboriosam aut consequuntur recusandae mollitia doloremque est architecto cupiditate ullam. Quia est ut occaecati fuga. Distinctio ex repellendus eveniet velit sint quia sapiente cumque. Et ipsa perferendis ut nihil. Laboriosam vel voluptates tenetur nostrum. Eaque iusto cupiditate et totam et quia dolorum in. Sunt molestiae ipsum at consequatur vero. Architecto ut pariatur autem ad non cumque nesciunt qui maxime. Sunt eum quia impedit dolore alias explicabo ea.
-            </p>
+            <!-- Icon Container -->
+            <div id="icon-container">
+                <i class="bi bi-code-slash detail-icon" id="main-icon"></i>
+            </div>
+            
+            <h3 id="main-title">Software Engineering</h3>
+            
+            <div id="main-content">
+              <!-- Content will be injected here -->
+            </div>
           </div>
 
         </div>
@@ -141,26 +121,15 @@
   </main>
 
   <footer id="footer" class="footer accent-background">
-
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">DevFolio</strong> <span>All Rights Reserved</span></p>
-      </div>
       <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/harry934" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+        <a>Designed by Harry Otieno</a>
       </div>
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
@@ -183,6 +152,179 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Dynamic Content Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const interestsData = {
+        'software-engineering': {
+          title: 'Software Engineering',
+          icon: 'bi-code-slash',
+          description: `
+            <p>
+              Software Engineering is more than just writing code; it's about architectural thinking, problem-solving, and creating robust systems that stand the test of time. 
+              My journey in software engineering has been driven by a relentless curiosity to understand how things work under the hood and how to make them work better.
+            </p>
+            <p>
+              I specialize in full-stack development, with a strong emphasis on backend architecture and API design. I believe in writing clean, maintainable, and self-documenting code. 
+              Whether it's optimizing database queries or designing microservices, I approach every challenge with a focus on scalability and performance.
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <span>System Architecture & Design Patterns</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>RESTful API Development & Integration</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Database Management (SQL & NoSQL)</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Cloud Deployment & CI/CD Pipelines</span></li>
+            </ul>
+            <p>
+              My goal is to leverage these skills to build software that not only meets business requirements but also delivers a seamless and intuitive experience for users.
+            </p>
+          `
+        },
+        'machine-learning': {
+          title: 'Machine Learning',
+          icon: 'bi-cpu',
+          description: `
+            <p>
+              I am deeply fascinated by the transformative power of Artificial Intelligence and Machine Learning. The ability to teach machines to learn from data and make intelligent decisions is, to me, the closest we get to magic in technology.
+            </p>
+            <p>
+              My experience involves working with Python libraries like TensorFlow, Scikit-learn, and Pandas to build models that can classify, predict, and analyze complex datasets. 
+              From Computer Vision projects like emergency scene detection to predictive analytics, I enjoy the entire pipeline of ML development.
+            </p>
+             <ul>
+              <li><i class="bi bi-check-circle"></i> <span>Data Preprocessing & Feature Engineering</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Model Training & Evaluation (CNNs, Regression, etc.)</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Deep Learning with TensorFlow/Keras</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Deploying ML Models to Production</span></li>
+            </ul>
+            <p>
+              I am constantly exploring new advancements in AI, looking for ways to apply them to solve real-world problems in sectors like healthcare and safety.
+            </p>
+          `
+        },
+        'android-development': {
+          title: 'Android Development',
+          icon: 'bi-phone',
+          description: `
+            <p>
+              Mobile devices are the primary gateway to the digital world for billions of people. Developing for Android allows me to put powerful tools directly into people's hands. 
+              I love the challenge of limited resources and the opportunity to create highly responsive, touch-friendly interfaces.
+            </p>
+            <p>
+              I develop native Android applications using Java and Kotlin, focusing on clean architecture (MVVM) and material design principles. 
+              My aim is to ensure smooth performance across the fragmented Android ecosystem while delivering a polished user experience.
+            </p>
+             <ul>
+              <li><i class="bi bi-check-circle"></i> <span>Native Android Dev (Kotlin/Java)</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>MVVM Architecture & Jetpack Components</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>API Integration (Retrofit/Volley)</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>UI/UX Implementation with Material Design</span></li>
+            </ul>
+            <p>
+              Whether it's a utility app or a complex data-driven application, I strive for excellence in every activity and fragment.
+            </p>
+          `
+        },
+        'web-development': {
+          title: 'Web Development',
+          icon: 'bi-laptop',
+          description: `
+            <p>
+              The web is the universal platform. Web development is where I merge technical logic with creative design. 
+              I am passionate about creating responsive, accessible, and high-performance websites that look great on any device.
+            </p>
+            <p>
+              My toolkit includes modern HTML5, CSS3, JavaScript, and frameworks like React and Bootstrap. 
+              I pay close attention to the details—smooth transitions, semantic markup, and fast load times—to ensure an engaging user journey.
+            </p>
+             <ul>
+              <li><i class="bi bi-check-circle"></i> <span>Responsive & Adaptive Design</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Frontend Frameworks (React, Vue, etc.)</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Modern CSS (Flexbox, Grid, Animations)</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Cross-Browser Compatibility & SEO</span></li>
+            </ul>
+            <p>
+              I treat every website as a product that represents the brand and serves the user's needs effectively.
+            </p>
+          `
+        },
+        'iot-solutions': {
+          title: 'IoT Projects & Automation',
+          icon: 'bi-broadcast-pin',
+          description: `
+            <p>
+              The Internet of Things (IoT) bridges the gap between the digital and physical worlds. 
+              I find immense joy in connecting sensors, microcontrollers, and cloud services to create smart systems that automate tasks and gather insights from the environment.
+            </p>
+            <p>
+              My projects often involve Arduino, ESP8266/32, and Raspberry Pi, integrated with custom software dashboards. 
+              From smart home automation to industrial monitoring, I love tinkering with hardware to build solutions that utilize data from the real world.
+            </p>
+             <ul>
+              <li><i class="bi bi-check-circle"></i> <span>Microcontroller Programming (Arduino/C++)</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Sensor Integration & Data Collection</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>IoT Protocols (MQTT, HTTP)</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Hardware-Software Interfacing</span></li>
+            </ul>
+            <p>
+              IoT is the frontier of innovation, and I am excited to be part of building the connected future.
+            </p>
+          `
+        },
+        'fitness-wellness': {
+          title: 'Fitness & Wellness',
+          icon: 'bi-heart-pulse',
+          description: `
+            <p>
+              Optimizing the human body is just as important as optimizing code. Fitness and wellness are integral parts of my life, keeping me disciplined, focused, and energetic.
+              I believe that a healthy body fuels a sharp mind.
+            </p>
+            <p>
+              I enjoy advising and motivating others on their fitness journeys, whether it's through workout plans, nutritional advice, or or just being an accountability partner. 
+              The principles of consistency, progressive overload, and rest apply to both fitness and software engineering.
+            </p>
+             <ul>
+              <li><i class="bi bi-check-circle"></i> <span>Personal Training & Workout Planning</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Nutritional Guidance for Performance</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Mental Wellness & Stress Management</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Community Motivation</span></li>
+            </ul>
+            <p>
+              Helping others achieve their physical goals is incredibly rewarding and balances the sedentary nature of tech work.
+            </p>
+          `
+        }
+      };
+
+      // Get ID from URL
+      const params = new URLSearchParams(window.location.search);
+      let currentId = params.get('id');
+
+      // Default to first if not found
+      if (!currentId || !interestsData[currentId]) {
+        currentId = 'software-engineering';
+      }
+
+      // Update Sidebar Active State
+      document.querySelectorAll('.sidebar-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-id') === currentId) {
+          link.classList.add('active');
+        }
+      });
+
+      // Populate Content
+      const data = interestsData[currentId];
+      const iconElement = document.getElementById('main-icon');
+      
+      document.getElementById('main-title').innerText = data.title;
+      document.getElementById('main-content').innerHTML = data.description;
+      
+      // Reset classes and add new ones (keeping 'bi' which matches all)
+      iconElement.className = `bi ${data.icon} detail-icon`;
+
+    });
+  </script>
 
 </body>
 
