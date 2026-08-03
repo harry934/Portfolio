@@ -376,6 +376,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Auto-close mobile menu when a nav link is clicked
+    if (navLinks) {
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+    }
+
     // ── Contact Form → Formspree ──
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
@@ -556,51 +566,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ── FEATURE: Mobile Swipe Navigation (#13) ──
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const swipeThreshold = 50; // min distance to be a swipe
-    const sectionIds = ['hero', 'about', 'expertise', 'projects', 'resume', 'contact'];
-    
+    // ── FEATURE: Mobile Swipe for Projects Carousel ──
+    // (Page-swipe section-jumping is disabled — carousels handle their own touch)
+    const carouselTrackEl = document.getElementById('hover-carousel-track');
+    const aboutImgContainer = document.getElementById('about-image-container');
+
+    // Track swipe origin to ignore carousel swipes at page level
+    let _pageSwipeSuppressed = false;
+
     document.body.addEventListener('touchstart', e => {
-        touchStartX = e.changedTouches[0].screenX;
+        // Suppress page-level swipe if touch starts inside a carousel
+        _pageSwipeSuppressed =
+            (carouselTrackEl && carouselTrackEl.contains(e.target)) ||
+            (aboutImgContainer && aboutImgContainer.contains(e.target));
     }, { passive: true });
-    
-    document.body.addEventListener('touchend', e => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, { passive: true });
-    
-    function handleSwipe() {
-        if (Math.abs(touchEndX - touchStartX) < swipeThreshold) return;
-        
-        // Find current section index based on scroll position
-        let currentIdx = -1;
-        const scrollY = window.scrollY + window.innerHeight / 2;
-        
-        for (let i = sectionIds.length - 1; i >= 0; i--) {
-            const sec = document.getElementById(sectionIds[i]);
-            if (sec && sec.offsetTop <= scrollY) {
-                currentIdx = i;
-                break;
-            }
-        }
-        
-        if (currentIdx === -1) currentIdx = 0;
-        
-        if (touchEndX < touchStartX) {
-            // Swiped Left -> Go to Next Section
-            if (currentIdx < sectionIds.length - 1) {
-                const target = document.getElementById(sectionIds[currentIdx + 1]);
-                if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-            }
-        } else if (touchEndX > touchStartX) {
-            // Swiped Right -> Go to Prev Section
-            if (currentIdx > 0) {
-                const target = document.getElementById(sectionIds[currentIdx - 1]);
-                if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-            }
-        }
+
+    // Projects carousel — touch swipe support
+    if (carouselTrackEl) {
+        let _projTouchStartX = 0;
+        carouselTrackEl.addEventListener('touchstart', e => {
+            _projTouchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        carouselTrackEl.addEventListener('touchend', e => {
+            const diff = e.changedTouches[0].screenX - _projTouchStartX;
+            if (Math.abs(diff) < 40) return;
+            const btnPrevEl = document.getElementById('carousel-prev');
+            const btnNextEl = document.getElementById('carousel-next');
+            if (diff < 0 && btnNextEl && !btnNextEl.disabled) btnNextEl.click();
+            else if (diff > 0 && btnPrevEl && !btnPrevEl.disabled) btnPrevEl.click();
+        }, { passive: true });
     }
 
     // ── FEATURE: Text Scramble Effect (#5) ──

@@ -625,7 +625,7 @@ body {
 .blind {
     position: absolute;
     inset: 0;
-    background: url('../img/profile.jpg') center 5% / cover no-repeat;
+    background: url('../img/profile.webp') center 5% / cover no-repeat;
     filter: contrast(1.05);
     z-index: 2;
     
@@ -2212,7 +2212,7 @@ body {
 
 @media (max-width: 768px) {
     .back-to-top {
-        bottom: 1.25rem;
+        bottom: 5rem; /* Push above the 70px mobile bottom nav */
         right: 1.25rem;
         width: 40px;
         height: 40px;

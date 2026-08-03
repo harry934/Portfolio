@@ -90,6 +90,20 @@
   /* transform is dynamic based on width, applied via inline styles in JS */
 }
 
+.about-image.is-far-left {
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  /* transform is dynamic based on width, applied via inline styles in JS */
+}
+
+.about-image.is-far-right {
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  /* transform is dynamic based on width, applied via inline styles in JS */
+}
+
 /* --- Content Styles --- */
 .about-content {
   display: flex;
@@ -179,4 +193,77 @@
 .about-arrow-button:hover,
 .about-arrow-button:focus {
   background-color: var(--about-color-arrow-hover-bg);
+}
+
+/* --- Mobile Responsiveness --- */
+
+/* Tablet: scale down the image container height */
+@media (max-width: 768px) {
+  .about-me-section {
+    padding: 2.5rem 1.25rem;
+    max-width: 100%;
+  }
+
+  .about-grid {
+    gap: 2rem;
+  }
+
+  .about-image-container {
+    height: 20rem;
+  }
+
+  .about-text-container {
+    min-height: auto;
+    text-align: left;
+  }
+
+  .about-name {
+    font-size: 1.3rem;
+  }
+
+  .about-quote {
+    font-size: 1rem;
+  }
+
+  .about-arrow-buttons {
+    justify-content: flex-start;
+    padding-top: 1.5rem;
+  }
+}
+
+/* Mobile: further scale down */
+@media (max-width: 480px) {
+  .about-me-section {
+    padding: 2rem 1rem;
+  }
+
+  .about-image-container {
+    height: 17rem;
+  }
+
+  .about-name {
+    font-size: 1.2rem;
+  }
+
+  .about-designation {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-quote {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .about-arrow-button {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+/* Very small mobile (360px) */
+@media (max-width: 360px) {
+  .about-image-container {
+    height: 14rem;
+  }
 }

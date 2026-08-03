@@ -8,37 +8,37 @@ document.addEventListener('DOMContentLoaded', () => {
   name: "Harry Otieno Mokaya",
   designation: "Software & DevOps Engineer",
   quote: "I'm a Software Engineer from Nairobi with roots in Migori County. I enjoy building digital products and exploring different areas of technology. For me, the best part is turning ideas into something real that people can interact with and benefit from.",
-  src: "assets/img/chillen.jpg"
+  src: "assets/img/chillen.webp"
 },
 {
   name: "Networking",
   designation: "Open to Opportunities",
   quote: "I enjoy meeting people, exchanging ideas, and collaborating on projects that challenge me to grow. If you're building something meaningful or just want to connect, I’d be glad to have the conversation.",
-  src: "assets/img/nss.jpg"
+  src: "assets/img/nss.webp"
 },
 {
   name: "Building Solutions",
   designation: "Problem Solver",
   quote: "I really enjoy solving real-world problems through technology. Whether it's designing systems, developing platforms, or improving existing ideas, I like the process of taking something from concept to a working solution that creates actual value.",
-  src: "assets/img/IoT.jpg"
+  src: "assets/img/IoT.webp"
 },
 {
   name: "Beyond Coding",
   designation: "Nature & Adventure",
   quote: "When I'm away from the screen, I enjoy taking walks, spending time outdoors, and exploring new places. I enjoy nature, adventure, and moments that help me reset, stay inspired, and enjoy life beyond technology.",
-  src: "assets/img/pfp1.jpg"
+  src: "assets/img/pfp1.webp"
 },
 {
   name: "Gym & Discipline",
   designation: "Fitness Lifestyle",
   quote: "Outside tech, I spend time in the gym and genuinely enjoy training. Fitness has taught me consistency, discipline, and showing up even when motivation isn’t there. I try to carry those qualities into my projects and personal growth as well.",
-  src: "assets/img/gym.jpg"
+  src: "assets/img/gym.webp"
 },
 {
   name: "Always Improving",
   designation: "Continuous Learning",
   quote: "Technology changes quickly, and I enjoy keeping up through projects, experimentation, and learning new approaches. I see growth as an ongoing process and always try to leave every project knowing more than when I started.",
-  src: "assets/img/tech.jpg"
+  src: "assets/img/tech.webp"
 }
   ];
 
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     img.className = 'about-image';
     img.dataset.index = index;
     // Preload image to avoid pop-in
-    img.loading = 'lazy';
+    img.loading = 'eager';
     imageContainer.appendChild(img);
   });
 
@@ -92,12 +92,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     images.forEach((img, index) => {
       // Clean previous state
-      img.classList.remove('is-active', 'is-left', 'is-right');
+      img.classList.remove('is-active', 'is-left', 'is-right', 'is-far-left', 'is-far-right');
       img.style.transform = ''; 
 
       // Calculate relative positions
       const isLeft = (activeIndex - 1 + length) % length === index;
       const isRight = (activeIndex + 1) % length === index;
+      const isFarLeft = length > 4 && (activeIndex - 2 + length) % length === index;
+      const isFarRight = length > 4 && (activeIndex + 2) % length === index;
       const isActive = index === activeIndex;
 
       // Apply appropriate styles replicating the Framer Motion transforms
@@ -109,6 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (isRight) {
         img.classList.add('is-right');
         img.style.transform = `translateX(${gap}px) translateY(-${maxStickUp}px) scale(0.85) rotateY(-15deg)`;
+      } else if (isFarLeft) {
+        img.classList.add('is-far-left');
+        img.style.transform = `translateX(-${gap * 1.5}px) translateY(-${maxStickUp}px) scale(0.7) rotateY(30deg)`;
+      } else if (isFarRight) {
+        img.classList.add('is-far-right');
+        img.style.transform = `translateX(${gap * 1.5}px) translateY(-${maxStickUp}px) scale(0.7) rotateY(-30deg)`;
       }
     });
   }
@@ -160,6 +168,27 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Event Listeners ---
   nextBtn.addEventListener('click', handleNext);
   prevBtn.addEventListener('click', handlePrev);
+
+  // Touch swipe navigation for mobile
+  let touchStartX = 0;
+  const swipeThreshold = 40;
+
+  imageContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  imageContainer.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].screenX;
+    const diff = touchEndX - touchStartX;
+    if (Math.abs(diff) < swipeThreshold) return;
+    if (diff < 0) {
+      handleNext(); // swipe left → next
+    } else {
+      handlePrev(); // swipe right → prev
+    }
+    // Prevent global page-swipe handler from also firing
+    e.stopPropagation();
+  }, { passive: true });
 
   // Resize observer to recalculate gaps responsively
   window.addEventListener('resize', () => {
